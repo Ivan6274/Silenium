@@ -9,7 +9,7 @@ branches:
 build: off  
 
 install:
-  
+  - gradlew test -Dselenide.headless=true
   - java -jar ./artifacts/app-order.jar
   - chmod +x gradlew
 
