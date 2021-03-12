@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +21,8 @@ public class SeleniumTests {
     private WebDriver driver;
     @BeforeAll
     static void setUpAll(){
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().linux().setup();
+        
     }
 
 
