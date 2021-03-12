@@ -1,5 +1,6 @@
 package ru.netology;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,13 +20,14 @@ public class SeleniumTests {
     private WebDriver driver;
     @BeforeAll
     static void setUpAll(){
-        System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
 
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
+        driver.get("http://localhost:7777");
     }
 
     @AfterEach
@@ -37,7 +39,7 @@ public class SeleniumTests {
     @Test
     void shouldTestOrderCart() {
 
-        driver.get("http://localhost:7777");
+
         driver.findElement(By.cssSelector("input[type='text']")).sendKeys("Алеша Попович");
         driver.findElement(By.cssSelector("input[type='tel']")).sendKeys("+79990000000");
         driver.findElement(By.cssSelector("[class='checkbox__box']")).click();
