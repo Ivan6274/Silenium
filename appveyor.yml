@@ -11,7 +11,7 @@ build: off
 install:
 
   - chmod +x gradlew
-  - java -jar app-order.jar -port=7777
+  - java -jar ./arifacts/app-order.jar -port=7777
 
 
 
