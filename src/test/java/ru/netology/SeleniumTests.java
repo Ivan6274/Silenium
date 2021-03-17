@@ -21,7 +21,7 @@ public class SeleniumTests {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().linux().setup();
+        WebDriverManager.chromedriver().setup();
 
     }
 
