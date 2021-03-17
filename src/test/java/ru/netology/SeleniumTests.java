@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -28,7 +28,8 @@ public class SeleniumTests {
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(new ChromeOptions().addArguments("--headless"));
+
         driver.get("http://localhost:7777");
     }
 
